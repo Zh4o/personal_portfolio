@@ -86,12 +86,12 @@ body {
 }
 
 .profile-card__avatar {
-    width: 150px;
+    width: 250px;
     height: auto;
 }
 
 .profile-card__info h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 0.75rem;
 }
 
@@ -157,7 +157,7 @@ body {
     }
 
     .profile-card__avatar {
-        width: 180px;
+        width: 400px;
     }
     
     .profile-card__info {
