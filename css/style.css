@@ -1,0 +1,170 @@
+/* --- General & Resets --- */
+:root {
+    --text-color: #111;
+    --bg-color: #fff;
+    --mango-yellow: #FFD133;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Main Layout --- */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.main-nav__mango {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out, filter 0.3s ease;
+    z-index: 2; /* Keep mango on top */
+}
+
+.main-nav__links {
+    display: flex;
+    gap: 1.5rem;
+    /* Hide links by default on mobile */
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+.main-nav__links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Mobile: Active state for mango navigation */
+.main-nav.is-active .main-nav__mango {
+    transform: translateX(-200px); /* Adjust this value based on link width */
+}
+.main-nav.is-active .main-nav__links {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* --- Profile Card (Mobile First) --- */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.profile-card__avatar {
+    width: 150px;
+    height: auto;
+}
+
+.profile-card__info h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.profile-card__info p {
+    font-size: 1.1rem;
+    max-width: 40ch;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+}
+
+/* --- Desktop Layout (min-width: 768px) --- */
+@media (min-width: 768px) {
+    .main-header {
+        /* Reset absolute positioning for desktop flow */
+        position: static;
+        width: 100%;
+        padding: 2rem 4rem 0 4rem;
+    }
+    
+    .main-nav {
+        justify-content: flex-end; /* Align nav to the right */
+        gap: 2rem;
+    }
+    
+    .main-nav__links {
+        /* Show links by default on desktop */
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+    
+    .main-nav__mango:hover {
+        /* Color change on hover for desktop */
+        filter: hue-rotate(240deg) brightness(1.1);
+    }
+    
+    /* Re-order mango to be last on desktop */
+    .main-nav__mango {
+        order: 2;
+    }
+    
+    .main-container {
+        /* Adjust padding to account for header */
+        min-height: calc(100vh - 100px);
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .profile-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .profile-card__avatar {
+        width: 180px;
+    }
+    
+    .profile-card__info {
+        text-align: left;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+}
