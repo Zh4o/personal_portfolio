@@ -7,7 +7,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("js");
   
   // Add the date filter
   eleventyConfig.addFilter("dateString", (dateObj) => {
