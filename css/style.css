@@ -168,3 +168,86 @@ body {
         justify-content: flex-start;
     }
 }
+
+/* --- Blog & Post Styling --- */
+
+.post-container {
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.post-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+/* Blog listing page */
+.blog-list {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-post-item {
+    margin-bottom: 2.5rem;
+}
+
+.blog-post-item h2 {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-item h2 a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.blog-post-item h2 a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Single post page */
+.post-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-content p {
+    margin-bottom: 1.2rem;
+}
+
+.post-content ul, .post-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.post-content pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 1.2rem;
+}
+
+.post-content code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
