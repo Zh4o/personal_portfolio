@@ -3,9 +3,11 @@ const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
   // Passthrough copy for our assets
+  eleventyConfig.addPassthroughCopy(".nojekyll");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("js");
   
   // Add the date filter
   eleventyConfig.addFilter("dateString", (dateObj) => {
