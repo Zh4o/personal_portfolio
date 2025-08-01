@@ -1,2 +1,2 @@
 # personal_portfolio
-portfolio page
+It's my personal portfolio page, built with Eleventy.

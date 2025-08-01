@@ -1,4 +1,4 @@
-// Add this line at the top of your .eleventy.js
+// DateTime manipulation
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {

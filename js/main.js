@@ -11,17 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if the menu is already open.
             if (mainNav.classList.contains('is-active')) {
                 // If menu is open, this is the "second tap".
-                // We do nothing here, allowing the link's default
-                // navigation to the homepage to proceed.
                 return;
             } else {
                 // If menu is closed, this is the "first tap".
                 
-                // 1. Prevent the link from navigating to the homepage.
+                // Prevent the link from navigating to the homepage.
                 event.preventDefault();
 
-                // 2. Open the menu by adding the 'is-active' class.
-                // The mango will slide over and stay there.
                 mainNav.classList.add('is-active');
 
                 setTimeout(() => {
