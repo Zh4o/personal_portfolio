@@ -1,19 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mangoToggle = document.getElementById('mango-toggle');
+    const mangoControl = document.getElementById('mango-nav-control');
     const mainNav = document.getElementById('main-nav');
 
-    if (mangoToggle && mainNav) {
-        mangoToggle.addEventListener('click', () => {
-            // This behavior is only for mobile view
-            if (window.innerWidth < 768) {
-                // Do not do anything if it's already active
-                if (mainNav.classList.contains('is-active')) {
-                    return;
-                }
+    if (mangoControl && mainNav) {
+        mangoControl.addEventListener('click', (event) => {
+            if (window.innerWidth >= 768) {
+                return;
+            }
+
+            // Check if the menu is already open.
+            if (mainNav.classList.contains('is-active')) {
+                // If menu is open, this is the "second tap".
+                // We do nothing here, allowing the link's default
+                // navigation to the homepage to proceed.
+                return;
+            } else {
+                // If menu is closed, this is the "first tap".
                 
+                // 1. Prevent the link from navigating to the homepage.
+                event.preventDefault();
+
+                // 2. Open the menu by adding the 'is-active' class.
+                // The mango will slide over and stay there.
                 mainNav.classList.add('is-active');
 
-                // Set a timer to automatically close the menu
                 setTimeout(() => {
                     mainNav.classList.remove('is-active');
                 }, 4000); // 4 seconds

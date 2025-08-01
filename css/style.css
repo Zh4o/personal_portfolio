@@ -41,12 +41,30 @@ body {
     position: relative;
 }
 
+#mango-nav-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    z-index: 2; /* Moved from .main-nav__mango */
+    transition: transform 0.4s ease-in-out; /* Moved from .main-nav__mango */
+}
+
 .main-nav__mango {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    transition: transform 0.4s ease-in-out, filter 0.3s ease;
-    z-index: 2; /* Keep mango on top */
+    transition: filter 0.3s ease; /* Kept filter transition here */
+}
+
+.main-nav__home-label {
+    display: block; /* Hide by default on desktop */
+    font-size: 0.7rem;
+    color: var(--text-color);
+    margin-top: 1px; /* Space between mango and text */
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out 0.2s; 
 }
 
 .main-nav__links {
@@ -67,13 +85,18 @@ body {
 }
 
 /* Mobile: Active state for mango navigation */
-.main-nav.is-active .main-nav__mango {
-    transform: translateX(-200px); /* Adjust this value based on link width */
+.main-nav.is-active #mango-nav-control {
+    transform: translateX(-205px); /* Adjust this value based on link width */
 }
+
 .main-nav.is-active .main-nav__links {
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
+}
+
+.main-nav.is-active .main-nav__home-label {
+    opacity: 1;
 }
 
 /* --- Profile Card (Mobile First) --- */
@@ -114,10 +137,6 @@ body {
 
 /* --- Desktop Layout (min-width: 768px) --- */
 @media (min-width: 768px) {
-    .main-nav__mango-link {
-    text-decoration: none;
-    line-height: 0; /* Helps prevent extra space around the image */
-    }
 
     .main-header {
         /* Reset absolute positioning for desktop flow */
@@ -141,6 +160,10 @@ body {
     .main-nav__mango:hover {
         /* Color change on hover for desktop */
         filter: hue-rotate(240deg) brightness(1.1);
+    }
+
+    .main-nav__home-label {
+        display: none;
     }
     
     /* Re-order mango to be last on desktop */
