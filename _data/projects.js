@@ -3,24 +3,24 @@
 module.exports = [
   {
     name: "Tease",
-    icon: "/img/mango.svg", // Using the mango as a placeholder icon
-    url: "https://github.com/your-username/your-repo",
-    description: "The very website you are looking at. Built with Eleventy, a simple static site generator. It's designed to be lightweight, fast, and easy to maintain. The design is fully responsive for mobile and desktop viewing.",
-    technologies: ["Eleventy", "Nunjucks", "JavaScript", "CSS"]
+    icon: "/img/tease.svg", // Using the mango as a placeholder icon
+    url: "https://usetease.com",
+    description: "Helping creators clone themselves to convert dms to $$",
+    technologies: ["AstroJS", "Typescript", "React", "TailwindCSS", "FastAPI", "Postgres"]
   },
   {
     name: "Elvish",
-    icon: "/img/project-icon-placeholder.svg", // You would create/add this SVG
-    url: "https://example.com/analytics-dashboard",
-    description: "A data visualization tool for tracking sales, customer behavior, and inventory. It features real-time charts and reporting to help business owners make informed decisions.",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL"]
+    icon: "/img/elvish.svg", // You would create/add this SVG
+    url: "https://www.youtube.com/watch?v=jCEXykJumcA",
+    description: "Early day of RAG in 2023. Elvish users upload their old RFPs/Q&A and submit new RFP requirements to get instant answers all on Email.",
+    technologies: ["Azure Functions", "GPT", "Azure Blob Storage", "PostgreSQL"]
   },
   {
-    name: "ElevenLabs Reader - Chrome Edition",
-    icon: "/img/project-icon-placeholder.svg", // You would create/add this SVG
-    url: "https://example.com/recipe-app",
-    description: "A cross-platform mobile application that allows users to discover, save, and share recipes. Includes features like a shopping list generator and a meal planner.",
-    technologies: ["Flutter", "Firebase", "Dart"]
+    name: "ElevenLabs Reader - Chrome Frontend",
+    icon: "/img/elevenlabs.svg", // You would create/add this SVG
+    url: "https://codepen.io/michelle-ma83/pen/jEPxEMj",
+    description: "A mostly frontend project I did to make a player for a ElevenLabs Reader for Chrome. I didn't build the backend yet, so enjoy the codepen",
+    technologies: ["CodePen", "Vanilla Javascript"]
   }
 ];
 
