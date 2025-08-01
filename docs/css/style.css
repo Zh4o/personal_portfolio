@@ -47,7 +47,6 @@ body {
     align-items: center;
     text-decoration: none;
     z-index: 2; /* Moved from .main-nav__mango */
-    transition: transform 0.4s ease-in-out; /* Moved from .main-nav__mango */
 }
 
 .main-nav__mango {
@@ -68,13 +67,25 @@ body {
 }
 
 .main-nav__links {
+    /* Take links out of the normal document flow */
+    position: absolute; 
+    /* Position them to the left of the mango (40px wide + 20px gap) */
+    right: 60px; 
+    /* Vertically center them relative to the parent nav */
+    top: 50%; 
+
     display: flex;
     gap: 1.5rem;
-    /* Hide links by default on mobile */
+
+    /* Hide links by default */
     opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    /* 
+       1. translateY(-50%) keeps it vertically centered.
+       2. translateX(30px) pushes it to the right, so it slides in from the right.
+    */
+    transform: translateY(-50%) translateX(30px);
     pointer-events: none;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
 .main-nav__links a {
@@ -85,13 +96,10 @@ body {
 }
 
 /* Mobile: Active state for mango navigation */
-.main-nav.is-active #mango-nav-control {
-    transform: translateX(-205px); /* Adjust this value based on link width */
-}
-
 .main-nav.is-active .main-nav__links {
     opacity: 1;
-    transform: translateX(0);
+    /* Bring the links to their final position, sliding them left */
+    transform: translateY(-50%) translateX(0);
     pointer-events: auto;
 }
 
@@ -163,7 +171,7 @@ body {
     }
 
     .main-nav__home-label {
-        display: none;
+        display: block;
     }
     
     /* Re-order mango to be last on desktop */
