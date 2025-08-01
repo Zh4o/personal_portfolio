@@ -14,11 +14,72 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-    <!-- Content from other pages will be injected here -->
+<header class="main-header">
+    <nav class="main-nav" id="main-nav">
+        <div class="main-nav__links">
+            <a href="/blog/">Blog</a>
+            <a href="/projects/">Projects</a>
+        </div>
+        
+        <a href="/" class="main-nav__mango-link" aria-label="Back to Home">
+            <img src="/img/mango.svg" alt="Navigation Menu" class="main-nav__mango" id="mango-toggle">
+        </a>
+    </nav>
+</header><!-- Content from other pages will be injected here -->
+    
+<div class="post-container">
     <h1>Projects</h1>
-<p>Coming soon!</p>
 
+    <div class="project-list"><div class="project-item">
+                
+                <div class="project-summary">
+                    <div class="project-title-group">
+                        <img src="/img/mango.svg" alt="Tease icon" class="project-icon">
+                        <h2>Tease</h2>
+                    </div>
+                    <a href="https://github.com/your-username/your-repo" class="project-visit-btn" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+
+                
+                <div class="project-details">
+                    <p>The very website you are looking at. Built with Eleventy, a simple static site generator. It&#39;s designed to be lightweight, fast, and easy to maintain. The design is fully responsive for mobile and desktop viewing.</p>
+                    <strong>Technologies used:</strong>
+                    <ul class="tech-list"><li>Eleventy</li><li>Nunjucks</li><li>JavaScript</li><li>CSS</li></ul>
+                </div>
+            </div><div class="project-item">
+                
+                <div class="project-summary">
+                    <div class="project-title-group">
+                        <img src="/img/project-icon-placeholder.svg" alt="Elvish icon" class="project-icon">
+                        <h2>Elvish</h2>
+                    </div>
+                    <a href="https://example.com/analytics-dashboard" class="project-visit-btn" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+
+                
+                <div class="project-details">
+                    <p>A data visualization tool for tracking sales, customer behavior, and inventory. It features real-time charts and reporting to help business owners make informed decisions.</p>
+                    <strong>Technologies used:</strong>
+                    <ul class="tech-list"><li>React</li><li>D3.js</li><li>Node.js</li><li>PostgreSQL</li></ul>
+                </div>
+            </div><div class="project-item">
+                
+                <div class="project-summary">
+                    <div class="project-title-group">
+                        <img src="/img/project-icon-placeholder.svg" alt="ElevenLabs Reader - Chrome Edition icon" class="project-icon">
+                        <h2>ElevenLabs Reader - Chrome Edition</h2>
+                    </div>
+                    <a href="https://example.com/recipe-app" class="project-visit-btn" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+
+                
+                <div class="project-details">
+                    <p>A cross-platform mobile application that allows users to discover, save, and share recipes. Includes features like a shopping list generator and a meal planner.</p>
+                    <strong>Technologies used:</strong>
+                    <ul class="tech-list"><li>Flutter</li><li>Firebase</li><li>Dart</li></ul>
+                </div>
+            </div></div>
+</div>
 
     <!-- Our JavaScript -->
     <script src="/js/main.js"></script>

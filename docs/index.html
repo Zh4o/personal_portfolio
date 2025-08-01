@@ -14,20 +14,19 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-    <!-- Content from other pages will be injected here -->
-    
 <header class="main-header">
     <nav class="main-nav" id="main-nav">
         <div class="main-nav__links">
             <a href="/blog/">Blog</a>
             <a href="/projects/">Projects</a>
         </div>
-        <img src="/img/mango.svg" alt="Navigation Menu" class="main-nav__mango" id="mango-toggle">
+        
+        <a href="/" class="main-nav__mango-link" aria-label="Back to Home">
+            <img src="/img/mango.svg" alt="Navigation Menu" class="main-nav__mango" id="mango-toggle">
+        </a>
     </nav>
-</header>
-
-<main class="main-container">
+</header><!-- Content from other pages will be injected here -->
+    <main class="main-container">
     <div class="profile-card">
         <img src="/img/avatar.svg" alt="A portrait of Zhao Ma" class="profile-card__avatar">
         <div class="profile-card__info">

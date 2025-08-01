@@ -114,6 +114,11 @@ body {
 
 /* --- Desktop Layout (min-width: 768px) --- */
 @media (min-width: 768px) {
+    .main-nav__mango-link {
+    text-decoration: none;
+    line-height: 0; /* Helps prevent extra space around the image */
+    }
+
     .main-header {
         /* Reset absolute positioning for desktop flow */
         position: static;
@@ -250,4 +255,106 @@ body {
 
 .back-link:hover {
     text-decoration: underline;
+}
+
+/* --- Projects Page Styling --- */
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.project-item:hover {
+    background-color: #f9f9f9;
+}
+
+.project-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+}
+
+.project-title-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.project-title-group h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.project-visit-btn {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents button text from wrapping */
+    transition: background-color 0.2s ease;
+    
+    /* Ensure button is clickable without triggering accordion */
+    position: relative;
+    z-index: 2;
+}
+
+.project-visit-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Accordion Details Styling --- */
+.project-details {
+    /* Hidden by default */
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.5rem;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    border-top: 1px solid transparent; /* Prepare for the border transition */
+}
+
+/* State when the accordion is open */
+.project-item.is-open .project-details {
+    max-height: 500px; /* Adjust if your content is very long */
+    padding: 1.5rem;
+    border-top-color: #e0e0e0; /* Show border when open */
+}
+
+.project-details p {
+    margin: 0 0 1rem 0;
+}
+
+.tech-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tech-list li {
+    background-color: #eee;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
 }
