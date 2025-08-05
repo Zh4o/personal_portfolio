@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhao Ma</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="main-header">
+    <nav class="main-nav" id="main-nav">
+        <div class="main-nav__links">
+            <a href="/blog/">Blog</a>
+            <a href="/projects/">Projects</a>
+        </div>
+        
+        <a href="/" id="mango-nav-control" aria-label="Toggle Menu or Go Home">
+            <img src="/img/mango.svg" alt="Navigation Menu" class="main-nav__mango">
+            <span class="main-nav__home-label">home</span>
+        </a>
+    </nav>
+</header><!-- Content from other pages will be injected here -->
+    
+<div class="post-container">
+    <article class="post-content">
+        <h1>Cloning Myself</h1>
+        <p class="post-meta">Published on August 4, 2025</p>
+
+        <p>My friend sent me an album by Possible Humans called Everybody Split this morning and I had been giving it a listen. I have also been thinking about the question I had last time:</p>
+<blockquote>
+<p>&quot;Fine-tuning and choosing the right model to begin with. Is it even possible to tune a model to the creator's voice? What personality traits and 'memories' from the creator should be included?&quot;</p>
+</blockquote>
+<p>I was able to both get a download of my iMessage data (in .txt) and also my Instagram/Facebook conversation data in .json. It turned out to be over 3.5gbs and 270,000 back and forths. I believe this is certainly enough data to make a &quot;me-LoRA&quot;. There are a few big questions that I must answer first:</p>
+<ol>
+<li>There is a lot of sensitive information - could I use something like a <a href="https://github.com/urchade/GLiNER">GliNER</a> to quickly go through the entire .txt iMessage file?</li>
+</ol>
+<p>It seems pretty easy in that I can just first import:</p>
+<pre><code>from gliner import GLiNER
+
+model = GLiNER.from_pretrained(&quot;urchade/gliner_base&quot;) 
+</code></pre>
+<p>and after cleaning the data, something like:</p>
+<pre><code>entities = model.predict_entities(stripped_line, entity_labels)
+</code></pre>
+<p>The NER should be able to remove any PII, but what about the conversation content itself? There is going to be some things I say to some friends that I don't want other friends to know. Maybe my clone will need to be conversation specific since my relationships are truly 1:1. This will have implications for Tease as well, as conversations without any context should have a default personality. The default personality has to be created somehow. I'm thinking there are layers to this:</p>
+<ol>
+<li><strong>Level 1: Strangers</strong> - Our personality is a bit different when we are talking with strangers</li>
+<li><strong>Level 2: Acquaintances</strong> - This are the people we don't really share that much about ourselves yet but this can also quickly evolve into friendships. We don't shittalk people with acquaintances.</li>
+<li><strong>Level 3: Friends</strong> - These are the people we can really trust. This is where it becomes 1:1, because we would tell certain friends things and shittalk could be here.</li>
+</ol>
+<p>Anyways, this was rambling, but hopefully I can make these three versions of myself by the next update. I wonder if I can even host it for everyone to give it a try.</p>
+
+
+        <a href="/blog/" class="back-link">← Back to all posts</a>
+    </article>
+</div>
+
+    <!-- Our JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
