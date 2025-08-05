@@ -389,3 +389,11 @@ body {
     border-radius: 15px;
     font-size: 0.85rem;
 }
+
+/* --- For Markdown --- */
+blockquote {
+  border-left: 5px solid #668000; 
+  margin: 1.5em 0;              
+  padding: 0 1em;           
+  color: #666;                   
+}
