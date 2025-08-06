@@ -5,7 +5,7 @@ module.exports = [
     name: "Tease",
     icon: "/img/tease.svg", // Using the mango as a placeholder icon
     url: "https://usetease.com",
-    description: "Helping creators clone themselves to convert dms to $$",
+    description: "Helping creators clone themselves to convert dms to $$.",
     technologies: ["AstroJS", "Typescript", "React", "TailwindCSS", "FastAPI", "Postgres"]
   },
   {
@@ -16,10 +16,10 @@ module.exports = [
     technologies: ["Azure Functions", "GPT", "Azure Blob Storage", "PostgreSQL"]
   },
   {
-    name: "ElevenLabs Reader - Chrome Frontend",
+    name: "ElevenLabs Chrome Reader",
     icon: "/img/elevenlabs.svg", 
     url: "https://codepen.io/michelle-ma83/pen/jEPxEMj",
-    description: "A mostly frontend project I did to make a player for a ElevenLabs Reader for Chrome. I didn't build the backend yet, so enjoy the codepen",
-    technologies: ["CodePen", "Vanilla Javascript"]
+    description: "A mostly frontend project I did to make a player for a ElevenLabs Reader for Chrome. I didn't build the backend yet, so enjoy the Codepen.",
+    technologies: ["CodePen", "Vanilla Javascript", "CSS", "HTML"]
   }
 ];
