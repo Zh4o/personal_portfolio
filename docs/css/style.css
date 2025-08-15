@@ -70,7 +70,7 @@ body {
     /* Take links out of the normal document flow */
     position: absolute; 
     /* Position them to the left of the mango (40px wide + 20px gap) */
-    right: 60px; 
+    right: 65px; 
     /* Vertically center them relative to the parent nav */
     top: 50%; 
 
